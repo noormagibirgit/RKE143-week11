@@ -1,7 +1,8 @@
 const express = require("express");
 const recipeRouter = require("./routes/recipes.routes");
 const ingredientRouter = require("./routes/ingredients.routes");
-const fullRecipesRouter = require("./routes/fullRecipes.router");
+const fullRecipesRouter = require("./routes/fullRecipes.routes");
+const randomRouter = require("./routes/randomRecipe.routes");
 const app = express();
 
 
@@ -10,6 +11,7 @@ const app = express();
 app.use("/recipes", recipeRouter);
 app.use("/ingredients", ingredientRouter);
 app.use("/fullRecipes", fullRecipesRouter);
+app.use("/random", randomRouter);
 
 
 
