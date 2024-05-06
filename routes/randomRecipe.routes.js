@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 
      const ingredientsResult = await db.query(ingredientsQuery, [selectedRecipe.id]);
      const ingredients = ingredientsResult.rows.map( element => element.ingredientname);
-     console.log(ingredients);
+     
 
      const randomRecipe = {
         recipe: selectedRecipe, 
@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
 
     }
     catch(error) {
-        console.log(error);
+        
         res.status(500).json({errorMessage: 'Internal Server error.'});
 
     }
